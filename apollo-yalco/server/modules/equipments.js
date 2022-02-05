@@ -2,9 +2,9 @@ const { gql } = require("apollo-server");
 const dbWorks = require("../dbWorks");
 
 const typeDefs = gql`
-  type Equipment {
+  type Equipment implements Tool {
     id: ID!
-    used_by: String
+    used_by: Role!
     count: Int
     new_or_used: String
   }
@@ -44,6 +44,6 @@ const resolvers = {
 };
 
 module.exports = {
-  typeDefs: typeDefs,
-  resolvers: resolvers,
+  typeDefs,
+  resolvers,
 };

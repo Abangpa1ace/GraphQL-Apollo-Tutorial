@@ -5,8 +5,12 @@ const mutations = require("./modules/mutationTypes");
 const enums = require("./types/enums");
 const equipments = require("./modules/equipments");
 const supplies = require("./modules/supplies");
+const softwares = require("./modules/softwares");
+const people = require("./modules/people");
+const givens = require("./modules/givens");
+const tools = require("./types/tools");
 
-const modules = [equipments, supplies];
+const modules = [equipments, supplies, softwares, people, givens, tools];
 
 const typeDefs = [queries, mutations, enums, modules.map((m) => m.typeDefs)];
 const resolvers = modules.map((m) => m.resolvers);

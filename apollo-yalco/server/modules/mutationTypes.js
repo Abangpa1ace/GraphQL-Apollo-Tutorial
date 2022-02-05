@@ -8,14 +8,19 @@ const typeDefs = gql`
       count: Int
       new_or_used: String
     ): Equipment
+
     editEquipment(
       id: String
       used_by: String
       count: Int
       new_or_used: String
     ): Equipment
+
     deleteEquipment(id: String): Equipment
+
     deleteSupply(id: String): Supply
+
+    postPerson(input: PostPersonInput): People
   }
 `;
 
