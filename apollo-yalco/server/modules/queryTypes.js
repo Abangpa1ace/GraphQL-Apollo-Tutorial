@@ -4,6 +4,8 @@ const typeDefs = gql`
   type Query {
     equipments: [Equipment]
     equipmentAdvs: [EquipmentAdv]
+    roles: [Role]
+    role: Role
     supplies: [Supply]
     softwares: [Software]
     software: Software
