@@ -7,10 +7,18 @@ const typeDefs = gql`
     manager: String!
     office: String
     extension_number: String
-    mascot: String,
+    mascot: String
     cleaning_duty: String!
     project: String
     members: [People]
+  }
+  input PostTeamInput {
+    manager: String!
+    office: String!
+    extension_number: String!
+    mascot: String!
+    cleaning_duty: String!
+    project: String!
   }
 `;
 const resolvers = {
@@ -19,9 +27,10 @@ const resolvers = {
     team: (parent, args) => dbWorks.getTeams(args)[0],
   },
   Mutation: {
+    postTeam: (parent, args) => dbWorks.postTeam(args),
     editTeam: (parent, args) => dbWorks.editTeam(args),
     deleteTeam: (parent, args) => dbWorks.deleteItem("teams", args),
-  }
+  },
 };
 
 module.exports = {
