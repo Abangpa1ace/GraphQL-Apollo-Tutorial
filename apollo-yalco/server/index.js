@@ -7,11 +7,12 @@ const equipments = require("./modules/equipments");
 const supplies = require("./modules/supplies");
 const softwares = require("./modules/softwares");
 const roles = require("./modules/roles");
+const teams = require("./modules/teams");
 const people = require("./modules/people");
 const givens = require("./modules/givens");
 const tools = require("./types/tools");
 
-const modules = [equipments, supplies, softwares, people, givens, tools, roles];
+const modules = [equipments, supplies, softwares, people, givens, tools, roles, teams];
 
 const typeDefs = [queries, mutations, enums, modules.map((m) => m.typeDefs)];
 const resolvers = modules.map((m) => m.resolvers);

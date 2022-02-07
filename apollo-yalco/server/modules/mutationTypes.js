@@ -16,9 +16,12 @@ const typeDefs = gql`
       new_or_used: String
     ): Equipment
 
-    deleteEquipment(id: String): Equipment
+    deleteEquipment(id: ID!): Equipment
 
-    deleteSupply(id: String): Supply
+    deleteSupply(id: ID!): Supply
+    
+    editTeam(id: ID!, input: PostTeamInput!): Team
+    deleteTeam(id: ID!): Team
 
     postPerson(input: PostPersonInput): People
   }

@@ -4,11 +4,13 @@ const typeDefs = gql`
   type Query {
     equipments: [Equipment]
     equipmentAdvs: [EquipmentAdv]
-    roles: [Role]
-    role: Role
+    roles: [RoleItem]
+    role(id: ID): RoleItem
     supplies: [Supply]
     softwares: [Software]
     software: Software
+    teams: [Team]
+    team(id: ID): Team
     people: [People]
     peopleFiltered(
       team: Int
